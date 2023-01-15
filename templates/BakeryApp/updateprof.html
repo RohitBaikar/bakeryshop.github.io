@@ -1,0 +1,81 @@
+{% extends 'BakeryApp/base.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>Update Profile Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<div class="container w-75 bg-light rounded-3 p-5 mt-3 shadow">
+
+    <div class="container text-center bg-secondary rounded-3 mt-3">
+        <h1 class="display-4 p-2">Update Profile</h1>
+    </div>
+
+    <!-- <div>
+        <p>{{user.username}}</p>
+    </div> -->
+
+    <!-- <div>
+        <label for="username">Username :</label>
+        <input  class="form-control" value="{{user.username}}">
+    </div> -->
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+             <label for="username">Username :</label>
+            <input  class="form-control" name="username" id="username" value="{{user.username}}">
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+             <label for="first_name">First Name :</label>
+            <input type="text" name="first_name" id="first_name" class="form-control" value="{{user.first_name}}">
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+             <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" id="last_name" class="form-control" value="{{user.last_name}}">
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+             <label for="email">Email :</label>
+            <input  name="email" id="email" class="form-control" value="{{user.email}}">
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+             <label for="address">Address :</label>
+            <input  class="form-control" name="address" id="address" value="{{user.address}}">
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+             <label for="contact">Contact :</label>
+            <input  class="form-control" id="contact" name="contact" value="{{user.contact}}">
+        </div>
+    </div>
+
+    
+
+</div>
+
+
+
+
+{% endblock body %}

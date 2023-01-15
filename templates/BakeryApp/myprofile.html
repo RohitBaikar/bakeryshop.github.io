@@ -1,0 +1,81 @@
+{% extends 'BakeryApp/base.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>My Profile Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<div class="container w-75 bg-light rounded-3 p-5 mt-3 shadow">
+
+    <div class="container text-center bg-secondary rounded-3 mt-3">
+        <h1 class="display-4 p-2">My Profile</h1>
+    </div>
+
+    <!-- <div>
+        <p>{{user.username}}</p>
+    </div> -->
+
+    <!-- <div>
+        <label for="username">Username :</label>
+        <input  readonly class="form-control" value="{{user.username}}">
+    </div> -->
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+            <label>Username :</label>
+            <input  readonly class="form-control" value="{{data.user.username}}">
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+            <label>First Name :</label>
+            <input type="text" name="fname" readonly id="fname" class="form-control" value="{{user.first_name}}">
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+            <label>Last Name:</label>
+            <input type="text" name="lname" readonly id="fname" class="form-control" value="{{user.last_name}}">
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+            <label>Email :</label>
+            <input  name="username" readonly class="form-control" value="{{user.email}}">
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+            <label>Address :</label>
+            <textarea name="address" readonly class="form-control" placeholder="Full Address">{{data.address}}</textarea>
+        </div>
+    </div>
+
+    <div class="mb-2 w-75">
+        <div class="my-3">
+            <label>Contact :</label>
+            <input  readonly class="form-control" value="{{data.contact}}">
+        </div>
+    </div>
+
+    
+
+</div>
+
+
+
+
+{% endblock body %}

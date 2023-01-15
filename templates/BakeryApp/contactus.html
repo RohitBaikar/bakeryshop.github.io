@@ -1,0 +1,49 @@
+{% extends 'BakeryApp/base.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>Contact Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="container text-center bg-secondary rounded-3 mt-3">
+        <h1 class="display-4 p-2">Contact Us</h1>
+    </div>
+    <div class="container text-center mt-4">
+        <div><font face = "Verdana" size = "2"> If you need any assistance, please fill in the form below and we will reach out to you within next 2 working days.</font></div>
+    </div>
+
+    <div class="container p-3 w-50 mt-4 shadow">
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            
+            {% for i in form %}
+            <div class="container mb-3">
+                {{i.label_tag}}
+                {{i}}
+                <span style="color:red ;">{{i.errors}}</span>
+            </div>
+            {% endfor %}
+            <div class="container text-center">
+                <input type="submit" value="Send" class="btn btn-success btn-lg">
+
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+{% endblock body %}

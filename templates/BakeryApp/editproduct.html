@@ -1,0 +1,94 @@
+{% extends 'BakeryApp/adminbase.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>Edit Product Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<div class="container w-75 bg-light rounded-3 p-5 mt-3 shadow">
+    <div class="container text-center bg-secondary rounded-3 mt-3">
+        <h1 class="display-4 p-2">Update Product</h1>
+    </div>
+
+    <form action="{% url 'editproduct' product.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="mb-2 w-75">
+            <div class="my-3">
+                <label for="name">Product Name :</label>
+                <input type="text" name="name" id="name" class="form-control" value="{{product.img_title}}">
+            </div>
+        </div>
+
+        <div class="mb-2 w-75">
+            <div class="my-3">
+                <label for="name">details :</label>
+                <input type="text" name="details" id="details" class="form-control" value="{{product.details}}">
+            </div>
+        </div>
+
+        <div class="mb-2 w-75">
+            <div class="my-3">
+                <label for="name">choose Image :</label>
+                <input type="file" name="image" id="image" class="form-control" value="">
+            </div>
+
+            <div class="my-3">
+                <img src="{{product.image.url}}" height="100px" width="100px" alt="">
+            </div>
+        </div>
+
+        <div class="mb-2 w-75">
+            <div class="my-3">
+                <label for="name">price :</label>
+                <input type="number" name="price" id="price" class="form-control" value="{{product.price}}">
+            </div>
+        </div>
+
+        <!-- <div class="mb-2 w-75">
+            <div class="my-3">
+                <label for="name">cat :</label>
+                <input type="radio" name="cat" id="cat" class="form-control" value="{{product.cat}}">
+            </div>
+        </div> -->
+
+        <div class="mb-2 w-75">
+            <div class="my-3">
+                <select name="category" class="form-control" id="">
+                    <option value="">Choose Category</option>
+                    {% for i in category %}
+                    <option value="{{i.title}}"{% if i.id == product.category.id %}selected{% endif %}>{{i.title}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        
+
+        <div class="mb-2 w-75">
+            <div class="my-3">
+                <label for="name">Qua :</label>
+                <input type="number" name="Qua" id="Qua" class="form-control" value="{{product.Qua}}">
+            </div>
+        </div>
+    
+        <div class="mb-2 text-center">
+            <input type="submit" value="Update" class="btn btn-outline-success">
+        </div>
+
+    </form>
+
+</div>
+
+
+
+
+{% endblock body %}

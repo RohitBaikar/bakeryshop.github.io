@@ -1,0 +1,56 @@
+{% extends 'BakeryApp/adminbase.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>All Category Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<div class="container p-3 mt-3 text-center">
+    <h2>All Category</h2>
+</div>
+<div class="container">
+    <div class="card-body">
+        
+
+        <div class="container-fluid">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">S.No</th>
+                    <th scope="col">Category Name</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% for i in categories %}
+                <tr>
+                    <!-- <th scope="row">1</th> -->
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.title}}</td>
+                    <td>
+                        <a href="{% url 'editcategory' i.id %}" class="text-light btn btn-success">Edit</a>
+                        <a href="{% url 'deletecategory' i.id %}" class="text-dark btn btn-danger" onclick="return confirm('Are you sure')">Delete</a>
+                    </td>
+               
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock body %}

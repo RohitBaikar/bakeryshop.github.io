@@ -1,0 +1,106 @@
+{% extends 'BakeryApp/base.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>Products Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<!-- <div class="container">
+    <div class="row">
+
+        <div class="col-3 mb-3 mt-5">
+            <div class="card" style="width: 15rem;">
+                <img src="{{image.image.url}}" class="card-img-top" alt="No Image" height="150px">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{image.img_title}}</h5>
+                    
+                </div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="col-9">
+
+            <div class="row">
+                <h5 class="card-title text-center">{{image.details}}</h5>
+                <h4 class="card-title text-center">{{image.price}}.Rs</h4>
+                <a href="" class="btn btn-outline-success btn-sm mt-2">Cart</a>
+                <a href="" class="btn btn-outline-success btn-sm mt-2">Buy</a>
+    
+    
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container text-center">
+    <div class="container mt-3">
+
+        <h1 class="card-title text-center display-5 ">{{image.img_title}}</h1>
+    </div>
+</div>
+<div class="container mt-3 ">
+    <div class="row">
+        
+        <div class="col-4 mb-5 mt-5">
+
+            <img src="{{image.image.url}}" class="rounded-3" alt="No Image" height="200px">
+        </div>
+
+        <div class="col-8 mb-5 mt-5">
+            <div class="row">
+            <!-- <h5 class="card-title text-center ">{{image.img_title}}</h5> -->
+            <h5 class="card-title text-center  ">{{image.details}}</h5>
+            <h4 class="card-title text-center mt-3">Price.{{image.price}}.Rs</h4>
+            </div>
+
+            <div class="_p-add-cart">
+                <div class="_p-qty">
+                    <span>Add Quantity</span>
+                    <div class="value-button-decrease_" id="" value="Decrease Value">-</div>
+                    <input type="number" name="qty" id="number" value="1">
+                    <div class="value-button-increase" id="" value="Increase Value">+</div>
+                </div>
+            </div>
+
+
+
+            <div class="container text-center mt-3">
+                <a href="" class="btn btn-outline-success btn-lg mt-2 me-3 w-25">Add To Cart</a>
+                <a href="" class="btn btn-outline-success btn-lg mt-2 me-3 w-25">Buy</a>
+
+            </div>
+        </div>
+        
+
+
+    </div>
+
+    <!-- <div class="container bg-secondary p-5">
+        <div class="container bg-success p-3 w-50 mt-3" style="display:inline-block;">
+            <h5 class="card-title text-center ">{{image.img_title}}</h5>
+            <h5 class="card-title text-center">{{image.details}}</h5>
+            <h4 class="card-title text-center">{{image.price}}.Rs</h4>
+
+            
+        </div>
+    </div>
+ -->
+
+</div>
+
+
+
+
+
+
+{% endblock body %}

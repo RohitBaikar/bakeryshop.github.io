@@ -1,0 +1,48 @@
+{% extends 'BakeryApp/base.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>Admin Login Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="container text-center bg-secondary rounded-3 mt-3">
+        <h1 class="display-4 p-2">Admin Login</h1>
+    </div>
+
+    <div class="container p-3 w-50 mt-4 shadow">
+        <form action="{% url 'adminsignin' %}" method="post">
+            {% csrf_token %}
+
+            <div class="container text-center p-3 mb-2">
+                <img src="{% static 'BakeryApp/images/Admin.png' %}" height="100px" width="100px" alt="No Pic">
+            </div>
+            {% for i in form %}
+            <div class="container mb-3">
+                {{i.label_tag}}
+                {{i}}
+                <span style="color:red ;">{{i.errors}}</span>
+            </div>
+            {% endfor %}
+           
+            <div class="container text-center"> 
+                <input type="submit" value="Login" class="btn btn-success btn-lg">
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+{% endblock body %}

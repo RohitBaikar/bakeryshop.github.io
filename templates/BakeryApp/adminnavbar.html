@@ -1,0 +1,87 @@
+{% load static %}
+
+<div class="text-center p-2 rounded">
+  <!-- <img src="{% static 'BakeryApp/images/Head.jpg' %}" class="card-img" width="1000px" height="100px" alt="" srcset="">
+  <div class="card-img-overlay">
+
+    <h1 style="color:chartreuse;">Bakery Shop</h1>
+  </div> -->
+
+  <img src="{% static 'BakeryApp/images/bakerykart-logo.jpg' %}" width="400px" height="85px" alt="">
+  
+
+</div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="{% url 'home' %}"><i class="bi bi-house-fill"></i></a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <!-- <li class="nav-item me-4 ms-3 text-center" >
+              <font face = "Comic sans MS" size =" 5" class="nav-link active" >Bakery Shop</font>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link active " aria-current="page" href="{% url 'admindashboard' %}"><font face = "WildWest" size = "4"><i class="bi bi-house"> </i>Admin Dashboard</font></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'addproduct' %}"><font face = "WildWest" size = "4"><i class="bi bi-box-seam"> </i>Add Products</font> </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'addcategory' %}"><font face = "WildWest" size = "4"><i class="bi bi-people"> </i> Add Category</font></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><font face = "WildWest" size = "4"><i class="bi bi-person-plus"> </i> Customers</font></a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-inboxes"></i> About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'contactus' %}"><i class="bi bi-telephone"></i> Contact Us</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bag-plus"></i> Cart</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-person-circle"></i> Admin Login</a>
+            </li>
+             -->
+            
+  
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-inboxes"></i> About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'contactus' %}"><i class="bi bi-telephone"></i> Contact Us</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-bag-plus"></i> Cart</a>
+            </li>
+            
+           -->
+  
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'adminlogout' %}"><font face = "WildWest" size = "4"><i class="bi bi-box-arrow-left"> </i> Admin Logout</font></a>
+            </li>
+
+            
+          </ul>
+         
+        </div>
+        <div class="" style="color:red;">
+          <font face = "Bedrock" size = "5"><i class="bi bi-person-lock"> </i>Welcome Admin</font>
+        </div>
+      </div>
+
+      
+    </nav>
+
+  

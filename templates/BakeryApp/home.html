@@ -1,0 +1,96 @@
+{% extends 'BakeryApp/base.html' %}
+{% load static %}
+
+<!-- custom css -->
+{% block css %}
+
+
+{% endblock css %}
+
+<!-- js block -->
+{% block js %}
+{% endblock js %}
+
+<!-- title block -->
+{% block title %}
+<title>Home</title>
+{% endblock title %}
+
+{% block body %}
+<div class="card">
+    {% include 'BakeryApp/carousel.html' %}
+</div>
+
+<div class="con p-3 my-5">
+
+    <!-- row -->
+    <div class="row">
+
+        <!-- left section -->
+        <div class="col-3">
+
+            <!-- list div -->
+            <div>
+                <ul class="list-group">
+
+                    <li class="list-group-item"><a href="{% url 'home' %}" class="text-dark text-decoration-none">All Products</a></li>
+
+                    {% for cat in categories %}
+
+                    <li class="list-group-item"><a href="{% url 'catimage' cat.id %}" class="text-dark text-decoration-none">{{cat.title}}</a></li>
+
+                    {% endfor %}
+
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- right section -->
+        <div class="col-9">
+
+            <div class="row">
+
+                {% for img in Images %}
+
+                <div class="col-3 mb-3 ">
+                    <div class="card" style="width: 13rem; height:400px;">
+                        <img src="{{img.image.url}}" class="card-img-top" alt="No Image" height="150px">
+                        <div class="card-body" >
+                            <h5 class="card-title text-center">{{img.img_title}} </h5>
+                            <h4 class="card-title text-center">{{img.price}}.Rs</h4>
+                                <!-- Button trigger modal -->
+                            <div class="card-body text-center">
+                                <!-- <a href="{% url 'image' img.id %}" class=" btn btn-outline-dark btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">view</a> -->
+                                <!-- <button class="btn btn-outline-dark"  >view</button> -->
+                                <a href="{% url 'image' img.id %}" class="btn btn-outline-success btn-sm mt-2">view</a>
+                                <a href="" class="btn btn-outline-success btn-sm mt-2">Cart</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <img src="{{img.image.url}}" class="card-img-top" alt="No Image" height="550px">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock body %}

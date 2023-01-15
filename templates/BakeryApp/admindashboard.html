@@ -1,0 +1,67 @@
+{% extends 'BakeryApp/adminbase.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block body %}
+
+<div class="row mt-5 p-3">
+    <div class="col-sm-3 p-3 ">
+        <div class="card shadow bg-dark p-2">
+            <div class="card-body text-center">
+                <h4 class="text-light">Total Customer</h4>
+            </div>
+            <div class="card-footer">
+                <a href="" class="text-warning">View Details</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-3 p-3">
+        <div class="card shadow bg-dark p-2">
+            <div class="card-body text-center">
+                <h4 class="text-light">Total Products</h4>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'allproducts' %}" class="text-warning">View Details</a>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-sm-3 p-3">
+        <div class="card shadow bg-dark p-2">
+            <div class="card-body text-center">
+                <h4 class="text-light">Total Category</h4>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'allcategory' %}" class="text-warning">View Details</a>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-sm-3 p-3">
+        <div class="card shadow bg-dark p-2">
+            <div class="card-body text-center">
+                <h4 class="text-light">Feedback</h4>
+            </div>
+            <div class="card-footer">
+                <a href="" class="text-warning">View Details</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+{% endblock body %}

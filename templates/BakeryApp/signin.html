@@ -1,0 +1,49 @@
+{% extends 'BakeryApp/base.html' %}
+{% load static %}
+
+
+{% block css %}
+{% endblock css %}
+
+{% block js %}
+{% endblock js %}
+
+{% block title %}
+<title>Signin Page</title>
+{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="container text-center bg-secondary rounded-3 mt-3">
+        <h1 class="display-4 p-2">User Login</h1>
+    </div>
+
+    <div class="container p-3 w-50 mt-4 shadow">
+        <form action="{% url 'signin' %}" method="post">
+            {% csrf_token %}
+
+            {% for i in form %}
+            <div class="container mb-3">
+                {{i.label_tag}}
+                {{i}}
+                <span style="color:red ;">{{i.errors}}</span>
+            </div>
+            {% endfor %}
+           
+            <div class="container text-center p-3"> 
+                <input type="submit" value="Login" style="width: 100px;" class="m-2 px-3 btn btn-lg btn-outline-success">
+            </div>
+
+            <div class="container text-center" style="border-top: 1px solid rgb(218, 218, 218);">
+                <a href="{% url 'signup' %}"  style="width: 100px;" class="m-4 px-3 btn btn-lg btn-outline-danger">Register</a>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+{% endblock body %}
